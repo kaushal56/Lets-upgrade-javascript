@@ -1,0 +1,140 @@
+Q1.
+
+log() :- used to print the O/P on console.
+error():-Used to log error message to the console.
+warn() :-Used to log warning message to the console.
+clear():-Used to clear the console.
+time() and timeEnd():- used to know the amount of time spend by a block or a function.
+table():-This method allows us to generate a table inside a console.
+count():- used to count the number that the function hit by this counting method.
+group() and groupEnd():-llows us to group contents in a separate block, which will be indented.
+
+Q2.
+var is used to declare global variable for example in the code given below we have declared variable inside if body but we can access the variable outside of the body.
+function m(){
+    if(true){
+        var a = "Hello";
+    }
+    console.log(a);
+}
+m();
+Output:- Hello
+
+
+let is used to create locacl variable for example in the code given below we have declared variable inside if body and we can not access the variable outside the if body.
+function m(){
+    if(true){
+        let a = "Hello";
+    }
+    console.log(a);
+}
+m();
+Output:- Error
+
+
+const is used to make the value of variable permanent.Which means we can not change the value of const variable once a variable is defined
+function m(){
+    const a = "hello";
+    console.log(a);
+    a = "hi";
+    console.log(a);
+    
+}
+
+
+Q3.
+The various datatypes are:-
+-------------------------
+String:-The string data type is used to represent textual data (i.e. sequences of characters). Strings are created using single or double quotes surrounding one or more characters.
+-------
+          var a = 'Hi there!';  
+          var b = "Hi there!";
+Number:-The number data type is used to represent positive or negative numbers with or without decimal place, or numbers written using exponential notation.
+------
+            var a = 25;         
+            var b = 80.5;       
+            var c = 4.25e+6;    
+            var d = 4.25e-6; 
+Boolean:-The Boolean data type can hold only two values: true or false. It is typically used to store values like yes (true) or no (false), on (true) or off (false).
+-------
+            var isReading = true;  
+            var isSleeping = false;
+Undefined:-The undefined data type can only have one value-the special value undefined. If a variable has been declared, but has not been assigned a value, has the value undefined.
+---------
+            var a;
+            var b = "Hello World!"
+
+            alert(a); 
+            alert(b);
+Null:-This is another special data type that can have only one value-the null value. A null value means that there is no value. It is not equivalent to an empty string ("") or 0, it is simply nothing.
+----
+      A variable can be explicitly emptied of its current contents by assigning it the null value.  
+	var a = null;
+        alert(a);
+ 
+        var b = "Hello World!"
+        alert(b); 
+
+        b = null;
+        alert(b) 
+Object:-The object is a complex data type that allows you to store collections of data.
+------
+        An object contains properties, defined as a key-value pair. A property key (name) is always a string, but the value can be any data type, like strings, numbers, booleans, or complex data types like arrays, function and other objects. You'll learn more about objects in upcoming chapters.
+
+        The following example will show you the simplest way to create an object in JavaScript.
+        var emptyObject = {};
+        var person = {"name": "Clark", "surname": "Kent", "age": "36"};
+ 
+
+        var car = {
+        "modal": "BMW X3",
+        "color": "white",
+        "doors": 5
+        }
+Array:-An array is a type of object used for storing multiple values in single variable. Each value (also called an element) in an array has a numeric position, known as its index, and it may contain data of any data type-numbers, strings, booleans, functions, objects, and even other arrays. The array index starts from 0, so that the first array element is arr[0] not arr[1].
+-----
+       The simplest way to create an array is by specifying the array elements as a comma-separated list enclosed by square brackets.
+       var colors = ["Red", "Yellow", "Green", "Orange"];
+       var cities = ["London", "Paris", "New York"];
+Function:-The function is callable object that executes a block of code. Since functions are objects, so it is possible to assign them to variables.
+                var greeting = function(){ 
+                    return "Hello World!"; 
+                }
+typeof:-The typeof operator can be used to find out what type of data a variable or operand contains. It can be used with or without parentheses (typeof(x) or typeof x).
+------
+        typeof 15;  // Returns: "number"
+        typeof 42.7;  // Returns: "number"
+        typeof 2.5e-4;  // Returns: "number"
+        typeof Infinity;  // Returns: "number"
+        typeof NaN;  // Returns: "number". Despite being "Not-A-Number"
+
+        // Strings
+        typeof '';  // Returns: "string"
+        typeof 'hello';  // Returns: "string"
+        typeof '12';  // Returns: "string". Number within quotes is typeof string
+
+        // Booleans
+        typeof true;  // Returns: "boolean"
+        typeof false;  // Returns: "boolean"
+
+        // Undefined
+        typeof undefined;  // Returns: "undefined"
+        typeof undeclaredVariable; // Returns: "undefined"
+
+        // Null
+        typeof Null;  // Returns: "object"
+
+        // Objects
+        typeof {name: "John", age: 18};  // Returns: "object"
+
+        // Arrays
+        typeof [1, 2, 4];  // Returns: "object"
+
+        // Functions
+        typeof function(){};
+ 
+            
+            
+            
+            
+            
