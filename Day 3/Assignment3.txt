@@ -12,6 +12,8 @@ Ans 2:
         console.log(" The OS name is "+ os[0] + " and version is "+ os[1] );
 
 Ans 3:
+
+Using If Else:
         var res = prompt("Enter Marks:");
         if (res<=100 && res>90 ) {
             console.log(" Marks are "+ res +" and grade is A1");
@@ -35,4 +37,67 @@ Ans 3:
             console.log(" Marks are "+ res +" and grade is E2");
         } else {
             console.log("Please Enter Valid No.");
+        }
+
+
+Using Switch Case:
+        var res = prompt("Enter Marks:");
+        var grade;
+        if (res<=100 && res>90 ) {
+            grade= "A1";
+        } else if (res<=90 && res>80) {
+            grade= "A2";
+        }else if (res<=80 && res>70) {
+            grade= "B1";
+        }else if (res<=70 && res>60) {
+            grade= "B2";
+        }else if (res<=60 && res>50) {
+            grade= "C1";
+        }else if (res<=50 && res>40) {
+            grade= "C2";
+        }else if (res<=40 && res>30) {
+            grade= "D1";
+        }else if (res<=30 && res>20) {
+            grade= "D2";
+        }else if (res<=20 && res>10) {
+            grade= "E1";
+        }else if (res<=10 && res>=0) {
+            grade= "E2";
+        } else {
+            console.log("Please Enter Valid No.");
+        }
+        switch (grade) {
+            case "A1":
+                console.log(" Marks are "+ res +" and grade is "+grade);
+                break;
+            case "A2":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "B1":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "B2":
+                console.log(" Marks are "+ res +" and grade is "+grade);
+                break;
+                    case "A2":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "C1":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "C2":
+                console.log(" Marks are "+ res +" and grade is "+grade);
+                break;
+            case "D1":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "D2":
+            console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
+            case "E1":
+                console.log(" Marks are "+ res +" and grade is "+grade);
+                break;
+            case "E2":
+                console.log(" Marks are "+ res +" and grade is "+grade);
+            break;
         }
