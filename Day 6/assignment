@@ -1,0 +1,76 @@
+Assignnment Day 6
+---------------------------------------------------------------------------------------------------------------------------------
+
+Ans 1:
+        var i =0;
+        var col = ["red","blue","cyan"];
+         setInterval(() => {
+
+            element = col[(i++)%col.length];
+            document.body.style.backgroundColor = element; 
+            console.log(element); 
+         }, 1000);
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Ans 2:<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+           function cal() {
+           var num = document.getElementById("num").value;
+           for (let index = 1; index < 11; index++){
+              document.getElementById("res").innerHTML += `${num} x ${index} = ${num*index}<br>`;  
+           }
+}</script>
+    <title>Table</title>
+    
+</head>
+<body>
+    <h1>Table</h1>
+    <input type = "number" id="num">
+    <button onclick="cal()">Calculate </button>
+    <p id="res"></p>
+    
+</body>
+</html>
+
+---------------------------------------------------------------------------------------------------------------------------------
+Ans 3:
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .darkmode{
+            background-color: black;
+            color: white;
+        }    
+    </style>
+    <script>
+        var userName = prompt("Enter your name:");
+        document.getElementById("username").innerText = userName;
+        setInterval(() => {
+           var x = new Date()
+           var x1 =  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+           document.getElementById('clock').innerHTML = x1;
+        }, 1000);
+        function changecolor() {
+           var cc = document.getElementById("dark");
+           cc.classList.toggle("darkmode");
+        }
+
+    </script>
+    <title>Display Username,time, toggle color</title>
+    
+</head>
+<body id="dark">
+    <h1 id="username"></h1>
+    <h2 id="clock"></h2>
+    <button onclick="changecolor()">Change Color</button>
+    
+</body>
+</html>
