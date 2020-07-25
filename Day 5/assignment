@@ -1,0 +1,99 @@
+Ans 1:
+        do {
+           var num = prompt("Enter the positve no. only:");
+        } while (isNaN(num) || num<=0);
+        var arr=[]
+        for (let index = 0; index <= num; index++) {
+           arr.push(index);
+        }
+        console.log(arr);
+        let  oddarr = arr.filter(number =>{return number%2!=0});
+        console.log(oddarr);
+        
+---------------------------------------------------------------------------------------------------------------------------------
+Ans 2:
+        class User{
+           constructor(name,age,email){
+               this.name=name;
+               this.age=age;
+               this.email=email;
+               this.luCoins=0;
+               this.courses=[];
+           }
+           login()
+           {
+               console.log(`${this.name} has logged in`);
+
+           }
+           logout()
+           {
+               console.log(`${this.name} has logged out`);
+           }
+        }
+
+        class moderator extends User {
+           addCoins(user){
+               user.luCoins++;
+               return this;
+
+           }
+           removeCoins(user){
+               user.luCoins--;
+               return this;
+
+           }
+        }
+
+        class admin extends moderator{
+           addCourse(user,course){
+               user.courses.push(course);
+               console.log(user);
+
+
+           }
+           deleteCourse(user,course){
+               user.courses.pop(course);
+               console.log(user);
+           }
+        }
+
+        let adm=new admin('Pratik',20,'pratik@gmail.com');
+        let user=new User('Kaushal',22,'kaus189@gmail.com');
+        let mod=new moderator('Arti',21,'arru567@gmail.com');
+
+        let users=[user,mod,adm];
+
+
+
+        console.log(users);
+
+        user.login();
+        mod.login();
+        adm.login();
+
+        mod.addCoins(user);
+        mod.addCoins(user);
+        mod.addCoins(user);
+
+        mod.removeCoins(user);
+
+
+        adm.addCourse(user,'java');
+        adm.addCourse(user,'javascript');
+        adm.addCourse(user,'android');
+        
+        
+---------------------------------------------------------------------------------------------------------------------------------
+Ans 3:
+        fetch('http://jsonplaceholder.typicode.com/todos')
+        .then(response=>
+            response.json()
+        )
+        .then(data=>{
+            let filteredResponse = data.filter(dataItem => {
+                return dataItem.completed
+            })
+            filteredResponse.forEach(element => {
+               console.log(element);
+            });
+        })
