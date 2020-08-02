@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face { font-family: LED; src: url(font.ttf); }
+        #clock{
+            font-family: LED;
+            font-weight: bold;
+        }    
+    </style>
+    
+    <script>  
+    
+    document.getElementById("clock").innerText="0:0:0";
+    var rst=0
+    var interval;
+    document.getElementById("error").innerText="";
+
+    var hr = document.getElementById("hours").value;
+    var min = document.getElementById("minutes").value;
+    var sec = document.getElementById("sec").value;
+    var x = new Date(0000,00,00,hr,min,sec,00);
+    function startTimer() {
+        clearInterval(interval);
+        hr = document.getElementById("hours").value;
+        min = document.getElementById("minutes").value;
+        sec = document.getElementById("sec").value;
+
+        if (hr==0 && min==0 && sec==0 ) {
+            document.getElementById("error").innerText="Enter no.";
+            return;
+        }
+        x = new Date(0000,00,00,hr,min,sec,00);
+        var t = Number(hr*60*60)+Number(min*60)+Number(sec);
+        t--;   
+        document.getElementById("clock").innerText=x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+        x.setSeconds(x.getSeconds()-1);
+        interval = setInterval(function hey() {
+            t--;         
+
+            document.getElementById("clock").innerText=x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+            x.setSeconds(x.getSeconds()-1);
+
+            if (t<=0 || rst==1) {
+                rst=0;
+                 setTimeout(()=>document.getElementById("clock").innerText="0:0:0",1000) ;
+                clearInterval(interval);
+            }
+
+        },1000);
+
+    }   
+
+    function reset() {
+        clearInterval(interval);
+        document.getElementById("clock").innerText="0:0:0";
+    }
+    
+    function validator() {
+        var hr = document.getElementById("hours").value;
+        var min = document.getElementById("minutes").value;
+        var sec = document.getElementById("sec").value;
+        if (hr==0 && min==0 && sec==0) {
+            document.getElementById("error").innerText="Enter some no.";
+        }
+        else if (hr<0 || hr>=24 || min<0 || min>=60 || sec<0 || sec>=60) {
+            document.getElementById("error").innerText="Enter the number in range";
+        }
+        else{
+            document.getElementById("error").innerText="";
+        }
+
+    }  
+    </script>
+    <title>time</title>
+    
+</head>
+<body>
+    <input id="hours" type="number" max="23" min="0" value="0" onblur="validator()">:
+    <input id="minutes" type="number" max="59" min="0" value="0" onblur="validator()">:
+    <input id="sec" type="number" max="59" min="0" value="0"onblur="validator()">:
+    <button onclick="startTimer()" id="set">Start Timer</button>
+    <p id="error"></p>
+    <button onclick="reset()" id="reset">reset</button>
+    <h1 id="clock" style="font-size: 50px;">0:0:0</h1>
+</body>
+</html>
